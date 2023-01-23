@@ -3,21 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 using System.IO;
 
 public class LoadGameRankScript : MonoBehaviour
 {
-    //Fields for display the playe info
-    public Text BestPlayerName;
+
+    //Fields for display the player info
+
+    public TextMeshProUGUI BestPlayerName;
+
 
     //Static variables for holding the best player data
     private static int BestScore;
     private static string BestPlayer;
 
+
     private void Awake()
     {
         LoadGameRank();
     }
+
+
 
     private void SetBestPlayer()
     {
@@ -29,6 +36,7 @@ public class LoadGameRankScript : MonoBehaviour
         {
             BestPlayerName.text = $"Best Score - {BestPlayer}: {BestScore}";
         }
+
     }
 
     public void LoadGameRank()
@@ -52,5 +60,4 @@ public class LoadGameRankScript : MonoBehaviour
         public int HighestScore;
         public string TheBestPlayer;
     }
-
 }
